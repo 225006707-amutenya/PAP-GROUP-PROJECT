@@ -1,11 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 
-/*
- * Save this source as a .c file (for example, pap_project.c) and ensure your IDE
- * is configured to use a C compiler/include path so stdio.h resolves correctly.
- */
-
 // declaring functions??
  void addEmployee();
  void displayEmployee();
