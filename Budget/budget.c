@@ -88,3 +88,66 @@ int enterExpenditure(void) {
     printf("Expenditure recorded for %s.\n", name);
     return 1;
 }
+void displayBudgets(void) {
+    if (departmentCount == 0) {
+        printf("No departments recorded yet.\n");
+        return;
+    }
+
+    printf("\n%-20s %15s %15s %15s  %s\n",
+           "Department", "Allocated", "Expenditure", "Remaining", "Status");
+    printf("-------------------------------------------------------------------------------\n");
+
+    for (int i = 0; i < departmentCount; i++) {
+        double remaining = calculateRemaining(departments[i].allocatedBudget,
+                                              departments[i].expenditure);
+        const char *status = (remaining < 0) ? "OVER BUDGET" : "WITHIN BUDGET";
+        printf("%-20s %15.2f %15.2f %15.2f  %s\n",
+               departments[i].name,
+               departments[i].allocatedBudget,
+               departments[i].expenditure,
+               remaining,
+               status);
+    }
+}
+
+void displayOverBudget(void) {
+    int found = 0;
+    printf("\nDepartments exceeding budget:\n");
+    for (int i = 0; i < departmentCount; i++) {
+        if (departments[i].expenditure > departments[i].allocatedBudget) {
+            printf(" - %s (over by N$%.2f)\n",
+                   departments[i].name,
+                   departments[i].expenditure - departments[i].allocatedBudget);
+            found = 1;
+        }
+    }
+    if (!found) printf("None. All departments are within budget.\n");
+}
+void budgetMenu(void) {
+    int choice;
+    do {
+        printf("\n--- BUDGET MANAGEMENT ---\n");
+        printf("1. Add / Update Department Budget\n");
+        printf("2. Enter Expenditure\n");
+        printf("3. View All Budgets\n");
+        printf("4. View Departments Over Budget\n");
+        printf("5. Back to Main Menu\n");
+        printf("Enter your choice: ");
+
+        if (scanf("%d", &choice) != 1) {
+            printf("Invalid input.\n");
+            while (getchar() != '\n');
+            continue;
+        }
+
+        switch (choice) {
+            case 1: addDepartment();       break;
+            case 2: enterExpenditure();    break;
+            case 3: displayBudgets();      break;
+            case 4: displayOverBudget();   break;
+            case 5: printf("Returning to main menu...\n"); break;
+            default: printf("Invalid choice. Please try again.\n");
+        }
+    } while (choice != 5);
+}
