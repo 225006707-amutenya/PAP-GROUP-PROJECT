@@ -52,14 +52,21 @@ System Features
 Compilation Instructions
 Requires GCC. From the project root:  gcc main.c employees.c budget.c suppliers.c assets.c reports.c -o mfms
 How to Run:
-On Windows command prompt:
+On Windows:
     mfms.exe
 Then choose a menu option (1–6) and follow the prompts.
+
  Individual Responsibilities
 J.A.T.S Uugwanga -Employee Management
+
 K.T.T.M Kalimba - Budget Management
+
 F.R.N.A Simon - Supplier Management
+
 J.I Ashikono -  Asset Management
+
 B.R Carlos - Reports
+
 J.K Fillemon - Functions, integration and validation
+
 A.N Amutenya - Testing, documentation and Git coordination
