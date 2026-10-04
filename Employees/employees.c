@@ -11,15 +11,15 @@ void searchEmployee();
 void calculateSalary();
 
 // Arrays
-char id[MAX][10];
-char name[MAX][50];
-char department[MAX][30];
+static char id[MAX][10];
+static char name[MAX][50];
+static char department[MAX][30];
 
-float basic[MAX];
-float housing[MAX];
-float transport[MAX];
+static float basic[MAX];
+static float housing[MAX];
+static float transport[MAX];
 
-int count = 0;
+static int count = 0;
 
 
 // Add Employee
