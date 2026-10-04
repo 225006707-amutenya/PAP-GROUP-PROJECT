@@ -1,7 +1,8 @@
 Municipal Financial Management System (MFMS)
+
 Course:  PAP521S - Programming in Practice
 
-## Group Members
+Group Members
 
 | Student Initials and Surname | Student Number |
 |------------------------------|----------------|
@@ -14,9 +15,12 @@ Course:  PAP521S - Programming in Practice
 | J.A.T.S Uugwanga             | 225166933      |
 
 Project Description
+
 A menu-driven C program that helps a municipality manage
 employees, budgets, suppliers and assets. Built in ANSI C (C99).
+
 System Features
+
 1. Employee Management
 -	Add a new employee (ID, name, department, basic salary, allowances)
 -	Display all employees in the system
@@ -57,6 +61,7 @@ On Windows:
 Then choose a menu option (1–6) and follow the prompts.
 
  Individual Responsibilities
+ 
 J.A.T.S Uugwanga -Employee Management
 
 K.T.T.M Kalimba - Budget Management
