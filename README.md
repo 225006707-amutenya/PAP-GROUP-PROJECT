@@ -72,6 +72,6 @@ J.I Ashikono -  Asset Management
 
 B.R Carlos - Reports
 
-J.K Fillemon - Functions, integration and validation
+J.K Fillemon - Integration and validation
 
-A.N Amutenya - Testing, documentation and Git coordination
+A.N Amutenya - Testing and Git coordination
