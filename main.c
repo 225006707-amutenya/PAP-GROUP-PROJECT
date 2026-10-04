@@ -2,47 +2,57 @@
 #include "employees.h"
 #include "suppliers.h"
 #include "assets.h"
+#include "budget.h"
+#include "reports.h"
 
+/* Sub-menu prototypes */
 void employeeMenu(void);
 void supplierMenu(void);
 void assetMenu(void);
 
-int main(void) {
+int main(void)
+{
     int choice;
 
     do
     {
-        printf("\n================================================== \n");
+        printf("\n==================================================\n");
         printf("  MUNICIPAL FINANCIAL MANAGEMENT SYSTEM\n");
-        printf("================================================== \n");
+        printf("==================================================\n");
         printf("  1. Employee Management\n");
-        printf("  2. Supplier Management\n");
-        printf("  3. Asset Management\n");
-        printf("  4. Exit\n");
+        printf("  2. Budget Management\n");
+        printf("  3. Supplier Management\n");
+        printf("  4. Asset Management\n");
+        printf("  5. Reports\n");
+        printf("  6. Exit\n");
         printf("--------------------------------------------------\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
         getchar();
 
-        switch (choice) {
+        switch (choice)
+        {
             case 1: employeeMenu(); break;
-            case 2: supplierMenu(); break;
-            case 3: assetMenu();    break;
-            case 4: printf("\nExiting MFMS. Goodbye.\n"); break;
+            case 2: budgetMenu();   break;
+            case 3: supplierMenu(); break;
+            case 4: assetMenu();    break;
+            case 5: reportsMenu();  break;
+            case 6: printf("\nExiting MFMS. Goodbye.\n"); break;
             default: printf("\nInvalid choice. Try again.\n");
         }
 
-    } while (choice != 4);
+    } while (choice != 6);
 
     return 0;
 }
 
-void employeeMenu(void) {
+/* ---------------- EMPLOYEE MENU ---------------- */
+void employeeMenu(void)
+{
     int choice;
-
     do
     {
-        printf("\n===== EMPLOYEE MANAGEMENT ===== \n");
+        printf("\n===== EMPLOYEE MANAGEMENT =====\n");
         printf("1. Add Employee\n");
         printf("2. Display Employees\n");
         printf("3. Search Employee\n");
@@ -52,7 +62,8 @@ void employeeMenu(void) {
         scanf("%d", &choice);
         getchar();
 
-        switch (choice) {
+        switch (choice)
+        {
             case 1: addEmployee();      break;
             case 2: displayEmployees(); break;
             case 3: searchEmployee();   break;
@@ -60,16 +71,16 @@ void employeeMenu(void) {
             case 5: break;
             default: printf("Invalid choice.\n");
         }
-
     } while (choice != 5);
 }
 
-void supplierMenu(void) {
+/* ---------------- SUPPLIER MENU ---------------- */
+void supplierMenu(void)
+{
     int choice;
-
     do
     {
-        printf("\n===== SUPPLIER MANAGEMENT ===== \n");
+        printf("\n===== SUPPLIER MANAGEMENT =====\n");
         printf("1. Add Supplier\n");
         printf("2. Display Suppliers\n");
         printf("3. Search Supplier\n");
@@ -79,7 +90,8 @@ void supplierMenu(void) {
         scanf("%d", &choice);
         getchar();
 
-        switch (choice) {
+        switch (choice)
+        {
             case 1: addSupplier();      break;
             case 2: displaySuppliers(); break;
             case 3: searchSupplier();   break;
@@ -87,16 +99,16 @@ void supplierMenu(void) {
             case 5: break;
             default: printf("Invalid choice.\n");
         }
-
     } while (choice != 5);
 }
 
-void assetMenu(void) {
+/* ---------------- ASSET MENU ---------------- */
+void assetMenu(void)
+{
     int choice;
-
     do
     {
-        printf("\n===== ASSET MANAGEMENT ===== \n");
+        printf("\n===== ASSET MANAGEMENT =====\n");
         printf("1. Add Asset\n");
         printf("2. Display Assets\n");
         printf("3. Search Asset\n");
@@ -105,13 +117,13 @@ void assetMenu(void) {
         scanf("%d", &choice);
         getchar();
 
-        switch (choice) {
+        switch (choice)
+        {
             case 1: addAsset();     break;
             case 2: displayAsset(); break;
             case 3: searchAsset();  break;
             case 4: break;
             default: printf("Invalid choice.\n");
         }
-
     } while (choice != 4);
 }
