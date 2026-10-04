@@ -20,52 +20,6 @@ float transport[MAX];
 
 int count = 0;
 
-int main()
-{
-    int choice;
-
-    do
-    {
-        printf("\n===== EMPLOYEE MANAGEMENT SYSTEM =====\n");
-        printf("1. Add Employee\n");
-        printf("2. Display Employees\n");
-        printf("3. Search Employee\n");
-        printf("4. Calculate Salary\n");
-        printf("5. Exit\n");
-
-        printf("Enter your choice: ");
-        scanf("%d", &choice);
-
-        if (choice == 1)
-        {
-            addEmployee();
-        }
-        else if (choice == 2)
-        {
-            displayEmployees();
-        }
-        else if (choice == 3)
-        {
-            searchEmployee();
-        }
-        else if (choice == 4)
-        {
-            calculateSalary();
-        }
-        else if (choice == 5)
-        {
-            printf("Goodbye!\n");
-        }
-        else
-        {
-            printf("Invalid choice.\n");
-        }
-
-    } while (choice != 5);
-
-    return 0;
-}
-
 
 // Add Employee
 void addEmployee()

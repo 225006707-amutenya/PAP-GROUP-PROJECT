@@ -1,7 +1,9 @@
+#ifndef SUPPLIERS_H
+#define SUPPLIERS_H
 
-Functions part
-void displayMenu();
-void addSupplier();
-void displaySuppliers();
-void searchSupplier();
-void compareSuppliers();
+void addSupplier(void);
+void displaySuppliers(void);
+void searchSupplier(void);
+void compareSuppliers(void);
+
+#endif

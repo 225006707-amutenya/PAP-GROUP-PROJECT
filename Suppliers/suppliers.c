@@ -1,7 +1,7 @@
 
 #include <stdio.h>
 #include <string.h>
-#include "Supplier.h"
+#include "Suppliers.h"
 
 #define MAX_SUPPLIERS 100
 
@@ -19,60 +19,6 @@ void addSupplier();
 void displaySuppliers();
 void searchSupplier();
 void compareSuppliers();
-
-int main()
-{
-    int choice;
-
-    do
-    {
-        displayMenu();
-        printf("Enter your choice: ");
-        scanf("%d", &choice);
-        getchar();
-
-        switch(choice)
-        {
-            case 1:
-                addSupplier();
-                break;
-
-            case 2:
-                displaySuppliers();
-                break;
-
-            case 3:
-                searchSupplier();
-                break;
-
-            case 4:
-                compareSuppliers();
-                break;
-
-            case 5:
-                printf("\nExiting Supplier Management System...\n");
-                break;
-
-            default:
-                printf("\nInvalid choice. Please try again.\n");
-        }
-
-    } while(choice != 5);
-
-    return 0;
-}
-
-
-
-void displayMenu()
-{
-    printf("SUPPLIER MANAGEMENT SYSTEM\n");
-    printf("1. Add Supplier\n");
-    printf("2. Display Suppliers\n");
-    printf("3. Search Supplier\n");
-    printf("4. Compare Suppliers\n");
-    printf("5. Exit\n");
-}
 
 
 void addSupplier()
