@@ -80,7 +80,7 @@ void displaySuppliers()
         printf("Telephone: %s\n", phone[i]);
         printf("Town/Location: %s\n", town[i]);
 
-        printf("Name Length: %lu characters\n",
+        printf("Name Length: %zu characters\n",
                strlen(supplierName[i]));
     }
 }
