@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <string.h>
-#include "employees.h"
 
 #define MAX 50
 
@@ -25,14 +24,20 @@ static int count = 0;
 // Add Employee
 void addEmployee()
 {
+    if (count >= MAX)
+    {
+        printf("\nEmployee list is full.\n");
+        return;
+    }
+
     printf("\nEnter Employee ID: ");
-    scanf("%s", id[count]);
+    scanf("%9s", id[count]);
 
     printf("Enter Name: ");
-    scanf(" %[^\n]", name[count]);
+    scanf(" %49[^\n]", name[count]);
 
     printf("Enter Department: ");
-    scanf(" %[^\n]", department[count]);
+    scanf(" %29[^\n]", department[count]);
 
     printf("Enter Basic Salary: ");
     scanf("%f", &basic[count]);
@@ -81,7 +86,7 @@ void searchEmployee()
     int found = 0;
 
     printf("\nEnter Employee ID to search: ");
-    scanf("%s", searchID);
+    scanf("%9s", searchID);
 
     for (i = 0; i < count; i++)
     {
@@ -111,7 +116,7 @@ void calculateSalary()
     int i;
 
     printf("\nEnter Employee ID: ");
-    scanf("%s", searchID);
+    scanf("%9s", searchID);
 
     for (i = 0; i < count; i++)
     {
@@ -132,4 +137,35 @@ void calculateSalary()
     }
 
     printf("Employee not found.\n");
+}
+
+
+// Main
+int main()
+{
+    int choice;
+
+    do
+    {
+        printf("\n===== EMPLOYEE MENU =====\n");
+        printf("1. Add Employee\n");
+        printf("2. Display Employees\n");
+        printf("3. Search Employee\n");
+        printf("4. Calculate Salary\n");
+        printf("5. Exit\n");
+        printf("Enter choice: ");
+        scanf("%d", &choice);
+
+        switch (choice)
+        {
+            case 1: addEmployee(); break;
+            case 2: displayEmployees(); break;
+            case 3: searchEmployee(); break;
+            case 4: calculateSalary(); break;
+            case 5: printf("Goodbye!\n"); break;
+            default: printf("Invalid choice.\n");
+        }
+    } while (choice != 5);
+
+    return 0;
 }
