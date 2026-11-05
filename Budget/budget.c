@@ -151,7 +151,9 @@ void budgetMenu(void) {
         }
     } while (choice != 5);
 }
+#ifdef STANDALONE
 int main() {
     budgetMenu();
     return 0;
 }
+#endif
