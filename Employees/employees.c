@@ -138,6 +138,7 @@ void calculateSalary()
 
     printf("Employee not found.\n");
 }
+#ifdef STANDALONE
 // Main
 int main()
 {
@@ -167,4 +168,5 @@ int main()
 
     return 0;
 }
+#endif
 
