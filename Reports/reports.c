@@ -74,3 +74,36 @@ void reportsMenu(void)
 
     } while (choice != 5);
 }
+
+#ifdef REPORTS_STANDALONE
+int main(void)
+{
+    int choice;
+    do
+    {
+        printf("\n===== REPORTS DEMO =====\n");
+        printf("1. Add Employee\n");
+        printf("2. Budget Menu (add departments / expenditure)\n");
+        printf("3. Add Supplier\n");
+        printf("4. Add Asset\n");
+        printf("5. Reports Menu\n");
+        printf("6. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+        getchar();
+
+        switch (choice)
+        {
+            case 1: addEmployee();  break;
+            case 2: budgetMenu();   break;
+            case 3: addSupplier();  break;
+            case 4: addAsset();     break;
+            case 5: reportsMenu();  break;
+            case 6: break;
+            default: printf("Invalid choice.\n");
+        }
+    } while (choice != 6);
+
+    return 0;
+}
+#endif
