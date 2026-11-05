@@ -151,3 +151,7 @@ void budgetMenu(void) {
         }
     } while (choice != 5);
 }
+int main() {
+    budgetMenu();
+    return 0;
+}
