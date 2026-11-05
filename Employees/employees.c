@@ -138,5 +138,33 @@ void calculateSalary()
 
     printf("Employee not found.\n");
 }
+// Main
+int main()
+{
+    int choice;
 
+    do
+    {
+        printf("\n===== EMPLOYEE MENU =====\n");
+        printf("1. Add Employee\n");
+        printf("2. Display Employees\n");
+        printf("3. Search Employee\n");
+        printf("4. Calculate Salary\n");
+        printf("5. Exit\n");
+        printf("Enter choice: ");
+        scanf("%d", &choice);
+
+        switch (choice)
+        {
+            case 1: addEmployee(); break;
+            case 2: displayEmployees(); break;
+            case 3: searchEmployee(); break;
+            case 4: calculateSalary(); break;
+            case 5: printf("Goodbye!\n"); break;
+            default: printf("Invalid choice.\n");
+        }
+    } while (choice != 5);
+
+    return 0;
+}
 
