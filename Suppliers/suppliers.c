@@ -1,6 +1,7 @@
+
 #include <stdio.h>
 #include <string.h>
-#include "supplier.h"
+#include "suppliers.h"
 
 #define MAX_SUPPLIERS 100
 
@@ -19,6 +20,7 @@ void displaySuppliers();
 void searchSupplier();
 void compareSuppliers();
 
+#ifdef STANDALONE
 int main()
 {
      
@@ -27,6 +29,7 @@ int main()
 
     return 0;
 }
+#endif
 
 void addSupplier()
 {
@@ -217,3 +220,6 @@ void  displayMenu(){
                 printf("\nInvalid choice. Please try again.\n");
         }
     } while(choice != 5);}
+
+
+
